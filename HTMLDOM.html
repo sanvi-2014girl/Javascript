@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+        }
+        div{
+            margin-top: 70px;
+            border: 2px solid burlywood;
+            padding: 30px;
+        }
+        h1{
+            text-align: center;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Magic Buttons</h1>
+    <div>
+        <center>
+            Number1: <input type="number" id="num1"> <br><br>
+            Number2: <input type="number" id="num2">
+            <h3 id="result">Answer will be displayed here:)</h3>
+            <button onclick="add()">Add</button>
+            <button onclick="sub()">Sub</button>
+            <button onclick="mul()">Multiply</button>
+            <button onclick="div()">Divide</button>
+        </center>
+    </div>
+    
+</body>
+<script>
+    function add(){
+        a = Number(document.getElementById("num1").value)
+        b = Number(document.getElementById("num2").value)
+        result = a + b
+        document.getElementById("result").innerHTML = `${a}+${b} = ${result}`
+    }
+    function sub(){
+        a = Number(document.getElementById("num1").value)
+        b = Number(document.getElementById("num2").value)
+        result = a - b
+        document.getElementById("result").innerHTML = `${a} - ${b} = ${result}`
+    }
+    function mul(){
+        a = Number(document.getElementById("num1").value)
+        b = Number(document.getElementById("num2").value)
+        result = a * b
+        document.getElementById("result").innerHTML = `${a} * ${b} = ${result}`
+    }
+    function div(){
+        a = Number(document.getElementById("num1").value)
+        b = Number(document.getElementById("num2").value)
+        result = a / b
+        document.getElementById("result").innerHTML = `${a} / ${b} = ${result}`
+    }
+</script>
+</html>
