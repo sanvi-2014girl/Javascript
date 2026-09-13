@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <script>
+        var sen = "The dragon flew over the big castle. ";
+        function checkTypes(){
+            document.getElementById("typeResult").innerText = 
+            "Score 42    -type: "+
+            typeof 42 +
+            "\n" +
+            "Name 'ALex    -type: "+
+            typeof "Alex"+
+            "\n" +
+            "Game over true   -type"+
+            typeof true;
+
+        }
+        function toStr(){
+            var v = document.getElementById("numIn").value;
+            document.getElementById("convResult").innerHTML = 
+              "String(" + v + ") = '" + String(v)+ "' - now it is a :" +typeof String(v);
+        }
+
+        function toNum() {
+            var v = document.getElementById("numIn").value ;
+            document.getElementById("convResult").innerHTML = "Number('" + v + "') = " + Number(v) + " - now it is a : "+typeof Number(v);
+        }
+        function doSearch(){
+          var w = document.getElementById("findw").value;
+          var p = sen.search(w);
+          document.getElementById("srResult").innerHTML = 
+            p === -1
+              ? "'" + w + "'is not in the sentence - try another word!"
+              :"Found'" + w + "' hiding at position" + p + "!";
+        }
+        function doReplace(){
+            var w = document.getElementById("findw").value;
+            document.getElementById("srResult").innerHTML = "New sentence: " + sen.replace(w,document.getElementById("swapW").value);
+        }
+        function trySafe(){
+            try{
+                var n = document.getElementById("divIn").value;
+                if(n=== "" || isNaN(n)){
+                    throw "That iis not a number - you caught the error!";
+                }
+                document.getElementById("errResult").innerHTML = "100 / " + n + "="+100 / Number(n) + " - Well done!";
+
+            } catch(err){
+                document.getElementById("errResult").innerHTML = "Error caugth: " + err;
+            }
+        }
+    </script>
+    
+</body>
+</html>
